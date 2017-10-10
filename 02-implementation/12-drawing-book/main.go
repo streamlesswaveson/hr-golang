@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+//https://www.hackerrank.com/challenges/drawing-book/editorial
 func main() {
 	var totalPages, targetPage int
 	fmt.Scan(&totalPages)
