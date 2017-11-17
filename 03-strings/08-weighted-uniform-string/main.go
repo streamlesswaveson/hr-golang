@@ -10,15 +10,18 @@ func main() {
 
 	lookup := map[int32]bool{}
 	var start int
+	var lastsum int32
 
 	for i:=0; i<len(in); i++ {
 		if i == 0 || in[i] != in[i-1]{
 			start = i
-			lookup[calc([]int32(in[start:start+1]))] = true
+			lastsum = int32(in[start]) - 96
+			lookup[lastsum] = true
 			continue
 		}
 		if in[i] == in[i-1] {
-			lookup[calc([]int32(in[start:i+1]))] = true
+			lastsum = lastsum + (int32(in[start]) - 96)
+			lookup[lastsum] = true
 			continue
 		}
 	}
@@ -38,13 +41,4 @@ func solve(lookup map[int32]bool) {
 	} else {
 		fmt.Println("No")
 	}
-}
-
-func calc(slice []int32) int32 {
-	val := slice[0] -96
-	var total int32
-	for i:=0; i<len(slice); i++{
-		total += val
-	}
-	return total
 }
