@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// https://www.hackerrank.com/challenges/lonely-integer/editorial
 func main()  {
 
 	var N,tmp int
